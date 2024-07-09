@@ -1,12 +1,12 @@
 import React from "react";
-import "./Button.css"
+import style from "./Button.module.scss"
 
 
 class Button extends React.Component {
     render() {
         return(
             
-            <button className="button-6">
+            <button className={style.button}>
                 Button
             </button>
         )
