@@ -2,20 +2,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap');
 
-.button {
-  align-self: center;
-  box-shadow: 2px 4px 4px #0000009F;
-  color: #FE7D24;
-  cursor: pointer;
-  padding: 16px;
-  width: 150px;
-  background-color: #620209;
-  border: #CD0017 solid 2px;
-  &:active {
-    background-color: #555e61;
-    box-shadow: 2px 2px 4px #0000009F inset;
-  }
-}
+// .button {
+//   align-self: center;
+//   box-shadow: 2px 4px 4px #0000009F;
+//   color: #FE7D24;
+//   cursor: pointer;
+//   padding: 16px;
+//   width: 150px;
+//   background-color: #620209;
+//   border: #CD0017 solid 2px;
+//   &:active {
+//     background-color: #555e61;
+//     box-shadow: 2px 2px 4px #0000009F inset;
+//   }
+// }
 
 @media screen and (min-width: 1280px) {
   .button {
@@ -37,7 +37,6 @@
   color: #FE7D24;
   cursor: pointer; 
   display: inline-flex;
-  font-size: 1em;
   font-weight: 400;
   justify-content: center;
   line-height: 1.25;

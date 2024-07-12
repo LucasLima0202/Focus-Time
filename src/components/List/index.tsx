@@ -1,6 +1,7 @@
 import React from "react";
 import style from './List.module.scss'
 import checkMark from './svg/check-mark.svg';
+import Item from "./Item";
 
 function List() {
     const task = [{
@@ -18,14 +19,12 @@ function List() {
             <h2 className={style.subtilte}> {'>'} Workout</h2>
             <ul>
                 {task.map((item, index) => (
-                    <li key={index} className={style.item}>
-                       <h3>
-                        {item.task}
-                        </h3>
-                        <span>
-                        {item.time}
-                        </span> 
-                    </li>
+                    <Item 
+                    key={index}
+                    // task={item.task}
+                    // time={item.time} or
+                    {... item}
+                    />
                 ))}
                 
             </ul>

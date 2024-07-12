@@ -4,7 +4,9 @@ import Menu from '../components/Menu';
 // import '../index.css'
 import List from '../components/List';
 import Form from '../components/Form/';
+import Timer from '../components/Timer/';
 import style from './App.module.scss';
+
 
 function App() {
   return (
@@ -13,7 +15,7 @@ function App() {
             <Menu></Menu>
             <section>
               <Form></Form>
-              <Form></Form>
+              <Timer></Timer>
               <List></List>
             </section>  
         </main>
