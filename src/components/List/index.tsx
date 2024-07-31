@@ -3,17 +3,21 @@ import checkMark from './svg/check-mark.svg';
 import Item from "./Item";
 import { Itask } from '../../types/task';
 
+interface props {
+    task: Itask[],
+    selectedTask: (Taskselected: Itask) => void
+}
 
-
-function List({task}: {task: Itask[]}) {
+function List({task, selectedTask}: props) {
     
     return (
         <aside className={style.listaTarefas}>
             <h2  className={style.subtilte}> {'>'} Workout</h2>
             <ul>
-                {task.map((item, index) => (
+                {task.map((item) => (
                     <Item
-                        key={index}
+                        selectedTask={selectedTask}
+                        key={item.id}
                         // task={item.task}
                         // time={item.time} or
                         {...item}

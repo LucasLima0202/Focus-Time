@@ -11,35 +11,45 @@ import { Itask } from '../types/task';
 
 
 function App() {
-  const [task, setTask] = useState<Itask[]>([
-    {
-      task: '> React',
-      time: '02:00:00',
-      selected: false,
-      completed: false,
-      id: uuidv4()
-    },
-    {
-      task: '> Javascript',
-      time: '01:00:00',
-      selected: false,
-      completed: false,
-      id: uuidv4()
-    },
-    {
-      task: '> Typescript',
-      time: '03:00:00',
-      selected: false,
-      completed: false,
-      id: uuidv4()
+  const [selected, setSelected] = useState<Itask>();
+
+
+  const [task, setTask] = useState<Itask[]>([]);
+
+  function selectedTask(Taskselected: Itask) {
+    setSelected(Taskselected);
+    setTask(oldtask => oldtask.map(task => ({...task,
+      selected: task.id === Taskselected.id ? true : false
+    })));
+  }
+
+  function fineshedTask(){
+    if(selected){
+      setSelected(undefined);
+      setTask(oldtask => oldtask.map(task => {
+        if(task.id === selected.id) {
+          return{
+            ...task,
+            selected: false,
+            completed: true
+          }
+        }
+        return task
+      }))
     }
-  ]);
+  }
 
   return (
     <div className={style.AppStyle}>
       <Form setTask={setTask} />
-      <List task={task} />
-      <Timer />
+      <List 
+      task={task}
+      selectedTask={selectedTask}
+      />
+      <Timer
+       selected={selected}
+       fineshedTask={fineshedTask}
+       />
     </div>
   );
 }
