@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with React + TypeScript  - Timer Focus 
 
  A project for a task manager with a timer, using typescript and React.
 
